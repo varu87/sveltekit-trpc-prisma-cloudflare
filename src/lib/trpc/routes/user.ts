@@ -1,6 +1,8 @@
 import { z } from "zod";
 import { protectedProcedure, t } from "../t";
-import { UserHomeRoles } from "@prisma/client/edge";
+import pkg from "@prisma/client/edge";
+
+const { UserHomeRoles } = pkg;
 
 export const user = t.router({
   getUser: protectedProcedure.query(async ({ ctx }) => {
